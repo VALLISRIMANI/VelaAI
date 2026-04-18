@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap');
+
+/* ══════════════════════════════════════
+   VELAAI — GLACIER PALETTE
+   Cool blues, ice whites, deep teal depths
+══════════════════════════════════════ */
+:root {
+  /* Backgrounds — deep ocean → frosted surface */
+  --bg:        #060E14;
+  --bg2:       #0B1825;
+  --bg3:       #0F2035;
+  --bg4:       #142840;
+
+  /* Borders — icy glass edges */
+  --border:    rgba(148,210,240,0.10);
+  --border2:   rgba(148,210,240,0.22);
+  --border3:   rgba(148,210,240,0.40);
+
+  /* Brand */
+  --primary:   #1B6FA8;
+  --accent:    #4BBDE0;
+  --glow:      #7ED6F0;
+
+  /* Text hierarchy */
+  --text:      #E8F5FB;
+  --text2:     #85BACF;
+  --text3:     #3E6E85;
+
+  /* Highlight — ice tip white */
+  --highlight: #C8ECFA;
+
+  /* Frosted glass */
+  --glass:     rgba(11,24,37,0.72);
+  --glass2:    rgba(20,40,64,0.55);
+
+  /* Typography */
+  --serif:     'Playfair Display', Georgia, serif;
+  --sans:      'DM Sans', system-ui, sans-serif;
+  --mono:      'Fira Code', 'Cascadia Code', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Animations */
+@keyframes fadeUp   { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+@keyframes pulse    { 0%,100% { opacity:0.35; } 50% { opacity:1; } }
+@keyframes spin     { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+@keyframes shimmer  { 0% { background-position:-600px 0; } 100% { background-position:600px 0; } }
+@keyframes floatY   { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+@keyframes iceGlow  {
+  0%,100% { box-shadow: 0 0 20px rgba(75,189,224,0.15); }
+  50%     { box-shadow: 0 0 40px rgba(75,189,224,0.35); }
+}
+
+.fade-up   { animation: fadeUp  0.55s cubic-bezier(0.22,1,0.36,1) both; }
+.fade-in   { animation: fadeIn  0.4s ease both; }
+.float     { animation: floatY  5s ease-in-out infinite; }
+.ice-glow  { animation: iceGlow 3s ease-in-out infinite; }
+
+/* Selection */
+::selection { background: rgba(75,189,224,0.25); color: var(--highlight); }
