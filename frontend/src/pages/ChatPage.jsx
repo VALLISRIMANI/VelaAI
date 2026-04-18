@@ -234,7 +234,8 @@ const ChatPage = () => {
     setInput("");
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8000/chat", {
+      const API = import.meta.env.VITE_API_URL;
+      const res = await fetch(`${API}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text, bot_type: botType, provider, temperature, use_memory: useMemory, session_id: useMemory ? sessionId : null })
