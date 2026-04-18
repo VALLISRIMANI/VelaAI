@@ -243,7 +243,7 @@ const ChatPage = () => {
       const data = await res.json();
       setMessages(m => [...m, { role: "assistant", content: data.response || data.detail || "Error." }]);
     } catch (err) {
-      setMessages(m => [...m, { role: "assistant", content: `⚠ Could not reach backend. Make sure FastAPI is running at localhost:8000.\n\nError: ${err.message}` }]);
+      setMessages(m => [...m, { role: "assistant", content: `Error: ${err.message}` }]);
     }
     setLoading(false);
     inputRef.current?.focus();
