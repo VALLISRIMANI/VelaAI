@@ -13,6 +13,11 @@ import AboutPage from "./pages/AboutPage.jsx";
 export default function App() {
   const [page, setPage] = useState("home");
 
+  // Scroll to top on every page change
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [page])
+   
   return (
     <>
       <Background />
