@@ -271,12 +271,29 @@ const ChatPage = () => {
           borderBottom: "0.5px solid var(--border)",
           background: "rgba(6,14,20,0.75)", backdropFilter: "blur(10px)"
         }}>
+
+          {/* ← Sidebar toggle lives here */}
           <button
             onClick={() => setSidebar(s => !s)}
-            style={{ background: "transparent", border: "none", color: "var(--text3)", cursor: "pointer", fontSize: 17, padding: 4 }}
             title="Toggle sidebar"
-          >{sidebarOpen ? "✕" : "☰"}</button>
-
+            style={{
+              background: "transparent",
+              border: "0.5px solid var(--border)",
+              color: "var(--text3)",
+              cursor: "pointer",
+              fontSize: 15,
+              width: 30, height: 30,
+              borderRadius: 7,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              transition: "all 0.15s",
+              flexShrink: 0
+            }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border2)"; e.currentTarget.style.color = "var(--text2)"; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text3)"; }}
+          >
+            {sidebarOpen ? "✕" : "☰"}
+          </button>
+          
           <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--accent)", animation: "pulse 2s ease-in-out infinite" }} />
           <span style={{ fontSize: 14, fontWeight: 500, color: "var(--text2)" }}>
             {selectedBot?.icon} {selectedBot?.label}
