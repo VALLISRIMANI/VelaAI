@@ -275,7 +275,7 @@ const ChatPage = () => {
             onClick={() => setSidebar(s => !s)}
             style={{ background: "transparent", border: "none", color: "var(--text3)", cursor: "pointer", fontSize: 17, padding: 4 }}
             title="Toggle sidebar"
-          >{sidebarOpen ? "◁" : "▷"}</button>
+          >{sidebarOpen ? "✕" : "☰"}</button>
 
           <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--accent)", animation: "pulse 2s ease-in-out infinite" }} />
           <span style={{ fontSize: 14, fontWeight: 500, color: "var(--text2)" }}>
