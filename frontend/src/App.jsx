@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./styles/theme.css";
 import Background from "./components/Background.jsx";
 import Nav from "./components/Nav.jsx";
