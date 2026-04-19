@@ -1,9 +1,11 @@
-import { StrictMode } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
+import ScrollToTop from "./components/ScrollToTop"
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <BrowserRouter>
+    <ScrollToTop />
     <App />
-  </StrictMode>,
+  </BrowserRouter>,
 )
