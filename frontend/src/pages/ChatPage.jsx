@@ -278,18 +278,26 @@ const ChatPage = () => {
             title="Toggle sidebar"
             style={{
               background: "transparent",
-              border: "0.5px solid var(--border)",
+              border: "1px solid var(--border2)", 
               color: "var(--text3)",
               cursor: "pointer",
               fontSize: 15,
-              width: 30, height: 30,
-              borderRadius: 7,
+              width: 32, height: 32,
+              borderRadius: 8,
               display: "flex", alignItems: "center", justifyContent: "center",
               transition: "all 0.15s",
               flexShrink: 0
             }}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--border2)"; e.currentTarget.style.color = "var(--text2)"; }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text3)"; }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = "var(--accent)";
+              e.currentTarget.style.color = "var(--accent)";
+              e.currentTarget.style.background = "rgba(75,189,224,0.08)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = "var(--border2)";
+              e.currentTarget.style.color = "var(--text3)";
+              e.currentTarget.style.background = "transparent";
+            }}
           >
             {sidebarOpen ? "✕" : "☰"}
           </button>
